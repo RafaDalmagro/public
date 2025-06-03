@@ -20,3 +20,11 @@ header {
         justify-content: space-between;
     }
 }
+
+@media (width >= 57.875rem) {
+    header{
+        & .btn{
+            font-size: var(--fs-md);
+        }
+    }
+}

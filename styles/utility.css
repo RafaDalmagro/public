@@ -32,6 +32,10 @@
     gap: 1.5rem;
 }
 
+.gap-2{
+    gap: 2rem;
+}
+
 .py-base {
     padding-block: var(--py-base);
 }

@@ -1,15 +1,18 @@
-#hero{
-    &>.container{
+#hero {
+    &>.container {
         grid-template-columns: 1.5fr 1fr;
         text-align: center;
-        &>a.btn{
+
+        &>a.btn {
             text-align: center;
         }
     }
 }
 
-@media (width >= 57.875rem) {
-    #hero{
-        
+@media (width >=57.875rem) {
+    #hero {
+        & h1 {
+            margin-bottom: 1.5rem;
+        }
     }
 }
