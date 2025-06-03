@@ -1,0 +1,15 @@
+#hero{
+    &>.container{
+        grid-template-columns: 1.5fr 1fr;
+        text-align: center;
+        &>a.btn{
+            text-align: center;
+        }
+    }
+}
+
+@media (width >= 57.875rem) {
+    #hero{
+        
+    }
+}

@@ -1,0 +1,22 @@
+header {
+    font-size: 1.25rem;
+    padding-top: .5rem;
+    
+    & img {
+        width: 5rem;
+        height: 5rem;
+        object-fit: cover;
+    }
+
+    &>.buttons{
+        margin-left: auto;
+        &>a:hover{
+            color: var(--text-color-primary);
+        }
+    }
+
+    & nav{
+        display: flex;
+        justify-content: space-between;
+    }
+}
