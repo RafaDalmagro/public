@@ -41,6 +41,14 @@
         width: 3rem;
     }
 
+    & .icons {
+        justify-content: space-around;
+    }
+
+    & .icon{
+        text-align: center;
+    }
+
     & .icon:hover path {
         fill: var(--color-primary);
         transition: fill 0.3s ease;
@@ -51,9 +59,6 @@
         transition: transform 0.3s ease-in-out;
     }
 
-    & .icons {
-        justify-content: space-around;
-    }
 
     & span {
         font-weight: 600;
