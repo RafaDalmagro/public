@@ -9,6 +9,7 @@
     --text-color-primary: #F2F2E9;
     --color-primary: #460273;
     --color-secondary: #f2e205;
+    --color-tertiary: #999;
     --brand-linear-gradient: linear-gradient(225deg, var(--color-primary) 0%, var(--color-secondary) 100%);
 
     --ff: "Inter", sans-serif;

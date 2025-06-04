@@ -1,9 +1,7 @@
 footer {
-    hr {
-        margin-block: 1rem;
-    }
-
     .footer-content {
+        border-top: 2px solid var(--color-secondary);
+        margin-bottom: 4rem;
         display: grid;
         gap: 1rem;
     }
@@ -80,7 +78,6 @@ footer {
 @media (width >=57.875rem) {
     footer {
         .footer-content {
-            padding-block: 1rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
