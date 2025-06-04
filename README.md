@@ -1,4 +1,4 @@
-# Cyberus Atletismo | Refatoração do Website Oficial
+# AAASEC Cyberus | Refatoração do Website Oficial
 
 Este repositório contém a nova versão em desenvolvimento do site oficial da Atlética Cyberus. A proposta é reestruturar o projeto original aplicando boas práticas de front-end adquiridas na formação Full Stack da Rocketseat.
 
