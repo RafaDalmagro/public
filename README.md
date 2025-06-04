@@ -14,9 +14,10 @@ A versão em produção atualmente disponível é:
 
 A versão refatorada (em andamento) está sendo publicada temporariamente via GitHub Pages:
 
+🔗 [rafadalmagro.github.io/public/](https://rafadalmagro.github.io/public/)
+
 ![image](https://github.com/user-attachments/assets/5ae7892e-ad51-4c2e-b1cf-2298d3447c6c)
 
-🔗 [rafadalmagro.github.io/public/](https://rafadalmagro.github.io/public/)
 
 ## ⚙️ Tecnologias Utilizadas
 
