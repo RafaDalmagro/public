@@ -2,7 +2,7 @@
     & .cards {
         justify-content: space-between;
         grid-template-columns: 1fr 1fr;
-        
+
         & .card {
             display: grid;
             gap: 1rem;
@@ -16,6 +16,7 @@
                 font-size: var(--fs-xl);
                 font-weight: var(--fw-bold);
                 color: var(--color-secondary);
+                text-align: center;
             }
 
             & img {
@@ -46,10 +47,6 @@
 
     & .icons {
         justify-content: space-around;
-    }
-
-    & .icon{
-        text-align: center;
     }
 
     & .icon:hover path {
