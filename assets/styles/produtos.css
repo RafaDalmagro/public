@@ -1,5 +1,8 @@
 #products {
     & .cards {
+        justify-content: space-between;
+        grid-template-columns: 1fr 1fr;
+        
         & .card {
             display: grid;
             gap: 1rem;
@@ -68,8 +71,7 @@
 @media (width >=57.875rem) {
     #products {
         & .cards {
-            justify-content: space-between;
-            grid-template-columns: 1fr 1fr;
+            
 
             & h2 {
                 min-height: 5.5rem;
