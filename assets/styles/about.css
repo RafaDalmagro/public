@@ -1,0 +1,48 @@
+#about {
+    & #about-content {
+        display: grid;
+        grid-template-rows: 2fr 1fr 1fr;
+        gap: .5rem;
+
+        grid-template-areas:
+            "history"
+            "mission"
+            "valor";
+
+        & h2 {
+            padding-block: .5rem;
+        }
+
+        & .about-img {
+            grid-area: img;
+            align-self: center;
+        }
+
+        #history {
+            grid-area: history;
+        }
+
+        #mission {
+            grid-area: mission;
+        }
+
+        #valor {
+            grid-area: valor;
+        }
+    }
+}
+
+@media (width >=57.875rem) {
+    #about {
+        & #about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+
+            grid-template-areas:
+                "img history"
+                "img mission"
+                "img valor";
+        }
+    }
+}
