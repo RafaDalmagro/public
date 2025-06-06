@@ -110,81 +110,81 @@
         opacity: 0.9;
     }
 
-    @media (width <=64rem) {
+}
+@media (width <=64rem) {
+    & .inner {
+        --w: 13rem;
+        --h: 20rem;
+        --translateZ: calc(var(--w) * 1.3);
+    }
+
+    & .foto {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    & #wrapper {
+        height: 40rem;
+    }
+}
+
+@media (width <=48rem) {
+    #directors {
         & .inner {
-            --w: 13rem;
-            --h: 20rem;
+            --w: 10rem;
+            --h: 15rem;
             --translateZ: calc(var(--w) * 1.3);
         }
 
         & .foto {
-            width: 8rem;
-            height: 8rem;
+            width: 6rem;
+            height: 6rem;
         }
 
         & #wrapper {
-            height: 40rem;
+            height: 30rem;
         }
     }
+}
 
-    @media (width <=48rem) {
-        #directors {
-            & .inner {
-                --w: 10rem;
-                --h: 15rem;
-                --translateZ: calc(var(--w) * 1.3);
-            }
-
-            & .foto {
-                width: 6rem;
-                height: 6rem;
-            }
-
-            & #wrapper {
-                height: 30rem;
-            }
+@media (max-width: 30rem) {
+    #directors {
+        & #wrapper {
+            height: 20rem;
         }
-    }
 
-    @media (max-width: 30rem) {
-        #directors {
-            & #wrapper {
-                height: 20rem;
-            }
+        & h1 {
+            font-size: var(--fs-xl);
+        }
 
-            & h1 {
-                font-size: var(--fs-xl);
-            }
+        & h2 {
+            padding-inline: .5;
+        }
 
-            & h2 {
-                padding-inline: .5;
-            }
+        & .inner {
+            --w: 6rem;
+            --h: 10rem;
+            --translateZ: calc(var(--w) * 1.3);
+        }
 
-            & .inner {
-                --w: 6rem;
-                --h: 10rem;
-                --translateZ: calc(var(--w) * 1.3);
-            }
+        & .foto {
+            width: 4rem;
+            height: 4rem;
+            margin-bottom: 1rem;
+        }
 
-            & .foto {
-                width: 4rem;
-                height: 4rem;
-                margin-bottom: 1rem;
-            }
+        & .card h2 {
+            font-size: 0.625rem;
+            line-height: 1.1;
+        }
 
-            & .card h2 {
-                font-size: 0.625rem;
-                line-height: 1.1;
-            }
+        & .card p {
+            font-size: 0.5rem;
+        }
 
-            & .card p {
-                font-size: 0.5rem;
-            }
-
-            & .card .img,
-            .card .imagem {
-                padding: 0.5rem;
-            }
+        & .card .img,
+        .card .imagem {
+            padding: 0.5rem;
         }
     }
 }
