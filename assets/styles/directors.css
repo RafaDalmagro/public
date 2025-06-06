@@ -1,0 +1,197 @@
+#directors {
+    padding: var(--py-xl) 0;
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--color-primary) 100%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & h2 {
+        padding-inline: 1rem;
+    }
+}
+
+#directors h1 {
+    text-align: center;
+    color: var(--color-secondary);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    text-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.3);
+}
+
+#wrapper {
+    width: 100%;
+    height: 50rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.inner {
+    --w: 15rem;
+    --h: 25rem;
+    --translateZ: calc(var(--w) * 1.3);
+    --rotateX: -20deg;
+    --perspective: 75rem;
+    position: absolute;
+    width: var(--w);
+    height: var(--h);
+    transform-style: preserve-3d;
+    transform: perspective(var(--perspective)) rotateX(var(--rotateX));
+    animation: rotating 25s linear infinite;
+}
+
+@keyframes rotating {
+    from {
+        transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(360deg);
+    }
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.1875rem solid rgba(var(--color-border), 0.8);
+    border-radius: 1rem;
+    overflow: hidden;
+    transform: rotateY(calc((360deg / var(--quantity)) * var(--index))) translateZ(var(--translateZ));
+    background: linear-gradient(145deg, var(--color-primary), var(--bg-color));
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: rotateY(calc((360deg / var(--quantity)) * var(--index))) translateZ(calc(var(--translateZ) + 1.25rem)) translateY(-1rem);
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.4);
+}
+
+/* Corrigindo as classes de imagem inconsistentes */
+.card .img,
+.card .imagem {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,
+            rgba(var(--color-primary), 0.1) 0%,
+            rgba(var(--color-primary), 0.3) 50%,
+            rgba(var(--color-primary), 0.5) 100%);
+}
+
+.foto {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 0.1875rem solid rgba(var(--color-secondary), 0.5);
+    box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card h2 {
+    color: var(--text-color-primary);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-bold);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.card p {
+    color: var(--color-tertiary);
+    font-size: var(--fs-sm);
+    text-align: center;
+    font-weight: var(--fw-base);
+    opacity: 0.9;
+}
+
+@media (width <=64rem) {
+    .inner {
+        --w: 13rem;
+        --h: 20rem;
+        --translateZ: calc(var(--w) * 1.3);
+    }
+
+    .foto {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    #wrapper {
+        height: 40rem;
+    }
+}
+
+@media (width <=48rem) {
+    .inner {
+        --w: 10rem;
+        --h: 15rem;
+        --translateZ: calc(var(--w) * 1.3);
+    }
+
+    .foto {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    #wrapper {
+        height: 30rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    #directors {
+        & #wrapper {
+            height: 20rem;
+        }
+
+        & h1 {
+            font-size: var(--fs-xl);
+        }
+        & h2{
+            padding-inline: .5;
+        }
+        .inner {
+            --w: 6rem;
+            --h: 10rem;
+            --translateZ: calc(var(--w) * 1.3);
+        }
+
+        .foto {
+            width: 4rem;
+            height: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h2 {
+            font-size: 0.625rem;
+            line-height: 1.1;
+        }
+
+        .card p {
+            font-size: 0.5rem;
+        }
+
+        .card .img,
+        .card .imagem {
+            padding: 0.5rem;
+        }
+    }
+}
