@@ -48,38 +48,52 @@
             }
         }
 
-        & button.btn {
-            justify-self: center;
-            margin-block: 2rem;
-
-            --btn-bg-color: var(--text-color-primary, #333);
-            --btn-color: var(--bg-color, #fff);
-
+        #butons {
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: fit-content;
-            padding: 0.5rem 2rem;
-            border-radius: 0.5rem;
-            border: none;
-            background: var(--btn-bg-color);
-            color: var(--btn-color);
-            font: var(--fw-md, 500) var(--fs-base, 1rem)/1.5 var(--ff-sans, sans-serif);
-            cursor: pointer;
-            transition: transform 0.8s, background 0.5s;
-            outline: none;
-        }
+            justify-content: space-between;
 
-        & button.btn:hover {
-            outline: 1px solid var(--color-secondary);
-            background: var(--bg-color);
-            color: var(--text-color-primary);
-            transition: none;
-            transform: none;
+            & a {
+                display: inline-block;
+                transition: transform 0.5s ease;
+                text-decoration: underline;
+            }
+
+            & a:hover {
+                transform: translateX(5px);
+            }
+
+            & button.btn {
+                justify-self: center;
+
+                --btn-bg-color: var(--text-color-primary, #333);
+                --btn-color: var(--bg-color, #fff);
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: fit-content;
+                padding: 0.5rem 2rem;
+                border-radius: 0.5rem;
+                border: none;
+                background: var(--btn-bg-color);
+                color: var(--btn-color);
+                font: var(--fw-md, 500) var(--fs-base, 1rem)/1.5 var(--ff-sans, sans-serif);
+                cursor: pointer;
+                transition: transform 0.8s, background 0.5s;
+                outline: none;
+            }
+
+            & button.btn:hover {
+                outline: 1px solid var(--color-secondary);
+                background: var(--bg-color);
+                color: var(--text-color-primary);
+                transition: none;
+                transform: none;
+            }
         }
 
     }
-
 }
 
 @media (width >=57.875rem) {
@@ -97,7 +111,7 @@
                 background: linear-gradient(180deg, var(--bg-color) 0%, var(--color-primary) 100%);
             }
 
-            & .login-wrapper{
+            & .login-wrapper {
                 background: transparent;
             }
         }
