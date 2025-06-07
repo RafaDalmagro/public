@@ -33,7 +33,29 @@
         </div>
     </header>
 
-    <h1>EVENTOS</h1>
+    <section id="events">
+        <div class="container py-lg px-lg">
+            <h1 class="py-lg">Acompanhe a Cyberus em nossos eventos</h1>
+            <div id="embeds">
+                <div class="embed-instagram-card instagram-embed"
+                    data-post-url="https://www.instagram.com/p/DJW_l6bRdDa/">
+                    <!-- <div class="embed-instagram-title"></div> -->
+                    <div class="embed-content"></div>
+                </div>
+                <div class="embed-instagram-card instagram-embed"
+                    data-post-url="https://www.instagram.com/p/DJ6mrsARJfF/">
+                    <!-- <div class="embed-instagram-title"></div> -->
+                    <div class="embed-content"></div>
+                </div>
+                <div class="embed-instagram-card instagram-embed"
+                    data-post-url="https://www.instagram.com/p/DJ7BollxLVn/">
+                    <!-- <div class="embed-instagram-title"></div> -->
+                    <div class="embed-content"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
     <footer>
         <div class="container py-lg grid">
@@ -95,6 +117,44 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function loadRealInstagramEmbed(container, postUrl) {
+            const blockquote = document.createElement('blockquote');
+            blockquote.className = 'instagram-media';
+            blockquote.setAttribute('data-instgrm-permalink', postUrl);
+            blockquote.setAttribute('data-instgrm-version', '14');
+            container.innerHTML = '';
+            container.appendChild(blockquote);
+
+            if (!document.querySelector('script[src*="instagram.com/embed.js"]')) {
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = '//www.instagram.com/embed.js';
+                document.head.appendChild(script);
+            } else if (window.instgrm) {
+                window.instgrm.Embeds.process();
+            }
+        }
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const content = el.querySelector('.embed-content');
+                    const postUrl = el.dataset.postUrl;
+                    loadRealInstagramEmbed(content, postUrl);
+                    observer.unobserve(el);
+                }
+            });
+        }, {threshold: 0.1, rootMargin: '50px'});
+
+        document.querySelectorAll('.instagram-embed').forEach(embed => {
+            observer.observe(embed);
+        });
+
+    </script>
+    <script async src="//www.instagram.com/embed.js"></script>
 </body>
 
 </html>
