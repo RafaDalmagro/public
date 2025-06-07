@@ -1,18 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>AAASEC - Login</title>
+    <link rel="shortcut icon" href="../assets/icons/cerbero.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="../assets/styles/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap"
         rel="stylesheet">
 </head>
+
 <body>
-    
+    <section id="login">
+        <div class="container px-lg">
+            <form id="loginForm" method="post" action="login/processa_login.php" autocomplete="on">
+                <img src="../assets/images/Cerbero amarelo.png" alt="Logo Cerbero">
+                <div class="login-wrapper">
+                    <h1>Login</h1>
+                    <div class="input-wrapper">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required
+                            autocomplete="username" autofocus>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="Digite sua senha" required
+                            autocomplete="current-password">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="showPassword">
+                            <label for="showPassword">Mostrar senha</label>
+                        </div>
+                    </div>
+                    <div id="errorMsg"></div>
+                    <button type="submit" class="btn btn-sm">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        const showPassword = document.getElementById('showPassword');
+        const passwordInput = document.getElementById('password');
+        const form = document.getElementById('loginForm');
+        const errorMsg = document.getElementById('errorMsg');
+        const emailInput = document.getElementById('email');
+        const loginBtn = document.querySelector('button[type="submit"]');
+
+        showPassword.addEventListener('change', function () {
+            passwordInput.type = this.checked ? 'text' : 'password';
+        });
+
+        function validateInputs() {
+            loginBtn.disabled = !(emailInput.value && passwordInput.value);
+        }
+
+        emailInput.addEventListener('input', validateInputs);
+        passwordInput.addEventListener('input', validateInputs);
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loginBtn.disabled = true; // já começa desabilitado
+        });
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Exemplo fake de validação
+            if (emailInput.value !== "usuario@teste.com" || passwordInput.value !== "123456") {
+                errorMsg.textContent = "E-mail ou senha inválidos.";
+                errorMsg.style.color = "red";
+            } else {
+                // Aqui você pode fazer o submit de verdade ou redirecionar
+                form.submit();
+            }
+        });
+
+    </script>
 </body>
+
 </html>

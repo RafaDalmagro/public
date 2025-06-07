@@ -1,0 +1,105 @@
+#login {
+    & form {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+        place-items: center;
+        gap: 3rem;
+
+        &>img {
+            width: 20rem;
+            height: 20rem;
+            border-radius: .5rem;
+        }
+    }
+
+    & .login-wrapper {
+        padding: 2rem;
+        display: grid;
+        gap: .5rem;
+        border-radius: .5rem;
+        background: linear-gradient(180deg, var(--bg-color) 0%, var(--color-primary) 100%);
+
+        & h1 {
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+
+        & label {
+            color: var(--text-color-primary);
+        }
+
+        & .input-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+
+            & input {
+                padding: .875rem;
+                border-radius:
+                    .5rem;
+            }
+
+            & .checkbox-wrapper {
+                display: flex;
+                justify-content: start;
+                gap: 1rem;
+            }
+        }
+
+        & button.btn {
+            justify-self: center;
+            margin-block: 2rem;
+
+            --btn-bg-color: var(--text-color-primary, #333);
+            --btn-color: var(--bg-color, #fff);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            padding: 0.5rem 2rem;
+            border-radius: 0.5rem;
+            border: none;
+            background: var(--btn-bg-color);
+            color: var(--btn-color);
+            font: var(--fw-md, 500) var(--fs-base, 1rem)/1.5 var(--ff-sans, sans-serif);
+            cursor: pointer;
+            transition: transform 0.8s, background 0.5s;
+            outline: none;
+        }
+
+        & button.btn:hover {
+            outline: 1px solid var(--color-secondary);
+            background: var(--bg-color);
+            color: var(--text-color-primary);
+            transition: none;
+            transform: none;
+        }
+
+    }
+
+}
+
+@media (width >=57.875rem) {
+    #login {
+        & form {
+            height: 100vh;
+            flex-direction: row;
+            place-content: center;
+            place-items: center;
+            gap: 3rem;
+
+            &>img {
+                width: 40rem;
+                height: 40rem;
+                background: linear-gradient(180deg, var(--bg-color) 0%, var(--color-primary) 100%);
+            }
+
+            & .login-wrapper{
+                background: transparent;
+            }
+        }
+    }
+}
