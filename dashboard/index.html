@@ -13,34 +13,65 @@
     <title>AAASEC Cyberus - Carteirinha</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
     <header>
         <div class="container px-lg">
             <nav class="flex items-center gap-1.5">
-                <a href="index.html">
-                    <img src="assets/images/logo.png" alt="Logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Logo">
                 </a>
                 <div class="flex gap-1.5">
-                    <a href="eventos.html" class="desktop-only">Eventos</a>
-                    <a href="produtos.html" class="desktop-only">Produtos e preços</a>
-                    <a href="about.html" class="desktop-only">Conheça a Cyberus</a>
-                    <a href="membros.html" class="desktop-only">Seja membro</a>
+                    <a href="../eventos.html" class="desktop-only">Eventos</a>
+                    <a href="../produtos.html" class="desktop-only">Produtos e preços</a>
+                    <a href="../about.html" class="desktop-only">Conheça a Cyberus</a>
+                    <a href="../membros.html" class="desktop-only">Seja membro</a>
                 </div>
                 <a href="login/index.html" class="btn btn-sm">Login</a>
             </nav>
         </div>
     </header>
+    <section id="dashboard">
+        <div class="container px-lg py-lg">
+            <div class="dashboard-content">
+                <header class="dashboard-header">
+                    <div class="logo-container">
+                        <div class="logo-icon">
+                            <svg width="2.5rem" height="2.5rem" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h1>Cyberpass</h1>
+                    </div>
+                    <p class="dashboard-subtitle">Atlética Cyberus • IFSC Caçador</p>
+                </header>
 
-    <h1>CARTEIRINHA</h1>
-
+                <div class="pdf-container">
+                    <div class="pdf-loading">
+                        <div class="loading-spinner"></div>
+                        <p>Carregando documento...</p>
+                    </div>
+                    <iframe class="pdf-viewer" title="Carteirinha digital da Atlética Cyberus" 
+                        src=""
+                        allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="container py-lg grid">
-            <div class="footer-content">
+            <div class="footer-content py-lg">
                 <div id="info">
                     <div class="items-center">
-                        <img src="assets/images/logo.png" alt="Logo">
+                        <img src="../assets/images/logo.png" alt="Logo">
                         <h3>Atlética Cyberus</h3>
                     </div>
                     <p class="py-base">Associação Atlética Acadêmica de Sistemas e Engenharia Cyberus, representando o
@@ -49,13 +80,13 @@
                     <div id="contact">
                         <ul role="list" class="grid gap-1">
                             <li>
-                                <img src="assets/icons/location-outline.svg" alt="">IFSC Campus Caçador, SC
+                                <img src="../assets/icons/location-outline.svg" alt="">IFSC Campus Caçador, SC
                             </li>
                             <li>
-                                <img src="assets/icons/mail-outline.svg" alt="">atletica.cyberus@ifsc.edu.br
+                                <img src="../assets/icons/mail-outline.svg" alt="">atletica.cyberus@ifsc.edu.br
                             </li>
                             <li>
-                                <img src="assets/icons/logo-whatsapp.svg" alt="">(49) 9 9999-9999
+                                <img src="../assets/icons/logo-whatsapp.svg" alt="">(49) 9 9999-9999
                             </li>
                         </ul>
                     </div>
@@ -90,12 +121,23 @@
                 </div>
             </div>
             <div id="copy">
-                <hr>
                 <p>© 2025 Associação Atlética Acadêmica de Sistemas e Engenharia Cyberus. Todos os direitos reservados.
                 </p>
             </div>
         </div>
     </footer>
+
+    <script>
+        const iframe = document.querySelector('.pdf-viewer');
+        iframe.onerror = function () {
+            const loading = document.querySelector('.pdf-loading');
+            loading.innerHTML = "<p style='color:red'>Falha ao carregar documento. Tente novamente mais tarde.</p>";
+        }
+        document.querySelector('.pdf-viewer').addEventListener('load', function () {
+            this.previousElementSibling.style.display = 'none';
+        });
+
+    </script>
 </body>
 
 </html>
